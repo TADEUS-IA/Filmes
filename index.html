@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jornada de Qualificação Imersiva</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="interaction-container" class="interaction-container">
+        
+        <button id="back-btn" class="control-button top-left hidden" aria-label="Voltar">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+        <button id="audio-btn" class="control-button top-right hidden" aria-label="Ativar/Desativar som">
+            <i class="fas fa-volume-high"></i>
+        </button>
+
+        <div class="media-container">
+            <img id="image-bg-1" class="background-image" src="" alt="Contexto visual da etapa">
+            <img id="image-bg-2" class="background-image" src="" alt="Contexto visual da etapa">
+            <div class="media-overlay"></div>
+        </div>
+
+        <div id="message-container" class="message-container"></div>
+        <div id="input-area" class="input-area hidden">
+            <input type="text" id="user-input" autocomplete="off" aria-label="Sua resposta">
+            <button id="advance-btn" class="hidden"><i class="fas fa-arrow-right"></i></button>
+        </div>
+        <div id="options-container" class="options-container"></div>
+    </div>
+
+    <audio id="background-music" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

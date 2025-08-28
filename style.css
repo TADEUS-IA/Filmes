@@ -1,0 +1,286 @@
+/* style.css */
+
+/* --- Variáveis Globais de Estilo --- */
+:root {
+    --roxo-fundo: #10101A;
+    --roxo-painel: #181828;
+    --roxo-primario: #8A2BE2;
+    --verde-neon: #00DF9A;
+    --branco-texto: #F0F0F0;
+    --cinza-texto: #a0a0b0;
+    --vermelho-erro: #e74c3c;
+    --font-family: 'Lexend', sans-serif;
+}
+
+/* --- Reset e Configurações Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: var(--font-family);
+    background: var(--roxo-fundo);
+    color: var(--branco-texto);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Classes Utilitárias --- */
+.hidden {
+    display: none !important;
+}
+
+/* --- Container Principal --- */
+.interaction-container {
+    width: 95vw;
+    height: 90vh;
+    max-width: 420px;
+    max-height: 850px;
+    background: var(--roxo-painel);
+    border-radius: 24px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.interaction-container.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* --- Mídia (Imagens de Fundo) --- */
+.media-container {
+    position: relative;
+    flex: 1;
+    background-color: #000;
+}
+
+.background-image {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.background-image.active {
+    opacity: 1;
+}
+
+.media-overlay {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(24, 24, 40, 0.95) 0%, rgba(24, 24, 40, 0.6) 35%, transparent 65%);
+    pointer-events: none;
+}
+
+/* --- Botões de Controle (Voltar, Áudio) --- */
+.control-button {
+    position: absolute; top: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    width: 44px; height: 44px;
+    display: flex; justify-content: center; align-items: center;
+    color: var(--branco-texto); font-size: 1.2rem;
+    cursor: pointer; z-index: 60;
+    transition: all 0.3s ease;
+}
+
+.control-button.top-left { left: 20px; }
+.control-button.top-right { right: 20px; }
+.control-button:hover { background: var(--roxo-primario); transform: scale(1.1); }
+
+.control-button.muted i::after {
+    content: '/'; position: absolute;
+    transform: rotate(15deg) translateX(1px);
+    font-weight: 600;
+}
+
+/* --- Mensagens e Interações --- */
+.message-container {
+    position: absolute;
+    bottom: 120px;
+    left: 25px; right: 25px;
+    z-index: 20;
+    text-align: center;
+    pointer-events: none;
+}
+
+.bot-message {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    padding: 15px 25px;
+    border-radius: 12px;
+    display: inline-block;
+    line-height: 1.5;
+    font-size: 1.1rem;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInMessage 0.6s ease forwards;
+}
+
+@keyframes fadeInMessage {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.input-area {
+    position: absolute; bottom: 0; left: 0;
+    width: 100%; padding: 25px; z-index: 30;
+    display: flex; align-items: center; gap: 10px;
+}
+
+#user-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--branco-texto);
+    padding: 18px; border-radius: 12px;
+    text-align: center; font-size: 1.1rem;
+    outline: none; transition: all 0.3s ease;
+}
+
+#user-input:focus {
+    border-color: var(--verde-neon);
+    background: rgba(0, 223, 154, 0.1);
+}
+
+#user-input.error {
+    border-color: var(--vermelho-erro);
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+#advance-btn {
+    background: var(--verde-neon);
+    color: var(--roxo-fundo);
+    border: none;
+    padding: 18px 20px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#advance-btn:hover {
+    opacity: 0.8;
+    transform: scale(1.03);
+}
+
+/* --- Botões de Opção --- */
+.options-container {
+    position: absolute; bottom: 0; left: 0;
+    width: 100%; padding: 25px;
+    display: flex; flex-direction: column;
+    gap: 15px; z-index: 20;
+}
+
+.option-btn {
+    width: 100%; background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--branco-texto); padding: 18px;
+    border-radius: 12px; font-family: var(--font-family);
+    font-size: 1rem; font-weight: 500;
+    cursor: pointer; transition: all 0.3s ease;
+    backdrop-filter: blur(10px); text-align: center;
+    opacity: 0; transform: translateY(20px);
+    animation: fadeInButton 0.5s ease forwards;
+}
+
+@keyframes fadeInButton {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.option-btn:hover {
+    background: var(--verde-neon);
+    color: var(--roxo-fundo);
+    border-color: var(--verde-neon);
+    transform: scale(1.03);
+}
+
+/* --- Tela Final (Vídeo) --- */
+.loading-screen-container {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--roxo-painel);
+    z-index: 100;
+    opacity: 0;
+    animation: fadeInMessage 0.5s ease forwards;
+}
+
+.loading-video {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.loading-video.active {
+    opacity: 1;
+}
+
+#unmute-video-btn {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 110;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--branco-texto);
+    padding: 25px 25px;
+    border-radius: 50px;
+    font-family: var(--font-family);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeInButton 1s 1s ease forwards;
+}
+
+#unmute-video-btn:hover {
+    background: var(--verde-neon);
+    color: var(--roxo-fundo);
+}
+
+/* --- Responsividade --- */
+@media (max-width: 500px) {
+    .interaction-container {
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        max-height: none;
+    }
+    .control-button { top: 15px; }
+    .control-button.top-left { left: 15px; }
+    .control-button.top-right { right: 15px; }
+}
