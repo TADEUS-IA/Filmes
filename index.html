@@ -442,8 +442,8 @@
             const movies = [
                  { cover: 'karate.jpg', link: 'https://drive.google.com/file/d/1BKrnqryfyJmaMnD6Wv6MUEthSnnaLEfB/view?usp=drive_link' },
                  { cover: 'chuck.jpg', link: 'https://drive.google.com/file/d/1bKJZ1g095hhbN7raCg29gBx9X4_VQz0I/view?usp=sharing' },
-                 { cover: 'Indisponivel.png', link: 'https://drive.google.com/file/d/1t87XurtJutJK0mYXDaQe_kv5bJpezX49/view?usp=sharing' },
-                 { cover: 'Indisponivel.png', link: 'https://drive.google.com/file/d/1oZiLslJpsa-sEMEBo80TFLEzsEqdsG7O/view?usp=sharing' }
+                 { cover: 'Indisponivel.jpg', link: 'https://drive.google.com/file/d/1t87XurtJutJK0mYXDaQe_kv5bJpezX49/view?usp=sharing' },
+                 { cover: 'Indisponivel.jpg', link: 'https://drive.google.com/file/d/1oZiLslJpsa-sEMEBo80TFLEzsEqdsG7O/view?usp=sharing' }
             ];
 
             const validationRegex = {
@@ -453,16 +453,16 @@
             };
 
             const journey = [
-                 { type: 'multiple-choice', name: "etapa_1_engajamento", image: "imagem01.png", options: [ { text: "Achar alguém com exatamente o mesmo gosto que eu.", value: 2 }, { text: "Conseguir combinar um horário com meus amigos.", value: 1 }, { text: "Decidir qual filme assistir no meio de tantas opções.", value: 0 } ] },
-                 { type: 'text-input', name: 'nome', image: 'imagem02.png', question: 'Ok! Como se chama?', validation: validationRegex.name },
-                 { type: 'text-input', name: 'email', image: 'imagem03.png', question: 'Seu melhor e-mail.', validation: validationRegex.email },
-                 { type: 'text-input', name: 'telefone', image: 'imagem04.png', question: 'Seu,telefone porfavor.', validation: validationRegex.phone },
-                 { type: 'multiple-choice', name: "etapa_2_solucao", image: "imagem05.png", options: [ { text: "Conhecer pessoas novas que são apaixonadas pelos mesmos filmes que eu.", value: 2 }, { text: "Ter um jeito fácil de me conectar com meus amigos que moram longe.", value: 1 }, { text: "Participar de debates e descobrir filmes que eu não conheceria sozinho.", value: 0 } ] },
-                 { type: 'multiple-choice', name: "etapa_3_disponibilidade", image: "imagem06.png", options: [ { text: "Uma sessão mais íntima e privada, com um pequeno grupo de amigos.", value: 2 }, { text: "Um grande evento online para um lançamento, com muita gente comentando.", value: 1 }, { text: "Um 'match' um a um, para um encontro de filme mais focado.", value: 0 } ] },
-                 { type: 'multiple-choice', name: "etapa_4_investimento", image: "imagem07.png", options: [ { text: "Chat de texto para mandar reações e comentários rápidos.", value: 2 }, { text: "Foco total no filme, com os comentários e debates apenas no final.", value: 1 }, { text: "Chat de voz para sentir que estamos todos juntos no mesmo sofá.", value: 0 } ] },
-                 { type: 'multiple-choice', name: "etapa_5_implementacao", image: "imagem08.png", options: [ { text: "Sessões com debates mediados por críticos ou especialistas no assunto.", value: 2 }, { text: "Um sistema de recomendação super inteligente para achar minha  'alma gêmea' de filmes.", value: 1 }, { text: "Acesso exclusivo a um catálogo de filmes clássicos ou difíceis de encontrar.", value: 0 } ] },
-                 { type: 'multiple-choice', name: "etapa_6_concorrencia", image: "imagem09.png", options: [ { text: "Saber na hora quem dos meus amigos está livre para ver um filme comigo.", value: 2 }, { text: "Um botão 'Me Surpreenda' que sempre escolhe o filme perfeito para o meu humor.", value: 1 }, { text: "Ver estatísticas e gráficos divertidos sobre todos os filmes que já assisti.", value: 0 } ] },
-                 { type: 'multiple-choice', name: "etapa_7_decisao", image: "imagem10.png", options: [ { text: "Eu preciso disso para ontem! Onde eu me inscrevo?", value: 2 }, { text: "Parece uma ideia excelente, quero muito acompanhar de perto.", value: 1 }, { text: "É interessante, estou curioso(a) para ver como vai funcionar.", value: 0 } ] }
+                 { type: 'multiple-choice', name: "etapa_1_engajamento", image: "imagem01.jpg", options: [ { text: "Achar alguém com exatamente o mesmo gosto que eu.", value: 2 }, { text: "Conseguir combinar um horário com meus amigos.", value: 1 }, { text: "Decidir qual filme assistir no meio de tantas opções.", value: 0 } ] },
+                 { type: 'text-input', name: 'nome', image: 'imagem02.jpg', question: 'Ok! Como se chama?', validation: validationRegex.name },
+                 { type: 'text-input', name: 'email', image: 'imagem03.jpg', question: 'Seu melhor e-mail.', validation: validationRegex.email },
+                 { type: 'text-input', name: 'telefone', image: 'imagem04.jpg', question: 'Seu,telefone porfavor.', validation: validationRegex.phone },
+                 { type: 'multiple-choice', name: "etapa_2_solucao", image: "imagem05.jpg", options: [ { text: "Conhecer pessoas novas que são apaixonadas pelos mesmos filmes que eu.", value: 2 }, { text: "Ter um jeito fácil de me conectar com meus amigos que moram longe.", value: 1 }, { text: "Participar de debates e descobrir filmes que eu não conheceria sozinho.", value: 0 } ] },
+                 { type: 'multiple-choice', name: "etapa_3_disponibilidade", image: "imagem06.jpg", options: [ { text: "Uma sessão mais íntima e privada, com um pequeno grupo de amigos.", value: 2 }, { text: "Um grande evento online para um lançamento, com muita gente comentando.", value: 1 }, { text: "Um 'match' um a um, para um encontro de filme mais focado.", value: 0 } ] },
+                 { type: 'multiple-choice', name: "etapa_4_investimento", image: "imagem07.jpg", options: [ { text: "Chat de texto para mandar reações e comentários rápidos.", value: 2 }, { text: "Foco total no filme, com os comentários e debates apenas no final.", value: 1 }, { text: "Chat de voz para sentir que estamos todos juntos no mesmo sofá.", value: 0 } ] },
+                 { type: 'multiple-choice', name: "etapa_5_implementacao", image: "imagem08.jpg", options: [ { text: "Sessões com debates mediados por críticos ou especialistas no assunto.", value: 2 }, { text: "Um sistema de recomendação super inteligente para achar minha  'alma gêmea' de filmes.", value: 1 }, { text: "Acesso exclusivo a um catálogo de filmes clássicos ou difíceis de encontrar.", value: 0 } ] },
+                 { type: 'multiple-choice', name: "etapa_6_concorrencia", image: "imagem09.jpg", options: [ { text: "Saber na hora quem dos meus amigos está livre para ver um filme comigo.", value: 2 }, { text: "Um botão 'Me Surpreenda' que sempre escolhe o filme perfeito para o meu humor.", value: 1 }, { text: "Ver estatísticas e gráficos divertidos sobre todos os filmes que já assisti.", value: 0 } ] },
+                 { type: 'multiple-choice', name: "etapa_7_decisao", image: "imagem10.jpg", options: [ { text: "Eu preciso disso para ontem! Onde eu me inscrevo?", value: 2 }, { text: "Parece uma ideia excelente, quero muito acompanhar de perto.", value: 1 }, { text: "É interessante, estou curioso(a) para ver como vai funcionar.", value: 0 } ] }
             ];
 
             const ui = {
@@ -915,3 +915,4 @@
     </script>
 </body>
 </html>
+
